@@ -1,5 +1,5 @@
 body{
-	font-family: 'Open Sans Condensed', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	background-color: whitesmoke;
 	font-size: 21px;
 }
@@ -7,7 +7,7 @@ section{
 	padding: 20px 0;
 }
 .page-title{
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Pacifico', cursive;
 	color: indianred;
 }
 
