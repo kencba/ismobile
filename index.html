@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">	
+	<meta name="viewport" content="width=device-width initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Is Mobie?</title>  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+    <header class="container">
+        <h1 class="page-title">isMobile</h1>        
+        <div>
+            <div class="form-group">
+                <textarea type="text" id="pattern" class="form-control">^^(?!.*ipad)(?=.*Mobile|iP(hone|od)|BlackBerry|IEMobile|NetFront|Fennec|Minimo|Opera Mobi|Blazer|Dolfin|Dolphin|Skyfire)</textarea>
+            </div>
+            <button id="check" class="btn btn-success">Check Again</button>         
+        </div>
+    </header>    
+	<main class="container">			    
+	  	<section class="result">
+            <div id="yes" class="hide">
+                <i class="fa fa-thumbs-up fa-5x yes"></i>            
+            </div>
+    		<div id="no" class="hide">
+                <i class="fa fa-thumbs-down fa-5x no"></i>      
+            </div>                                        
+        </section>
+        <section class="info">
+            <div id="ua" class="alert alert-info"></div>
+            <p>
+                This is simple approach to sniff user agent header to see if this device is a mobile or not.
+                It strictly looks for mobile devices and attempts to eliminate tablets.                                  
+            </p>
+            <p>
+                If it does not work for your mobile, tweak it and check again.
+            </p>
+        </section>
+    </main>
+    <hr>        
+    <footer>
+    </footer>
+    <script type="text/javascript">
+    	var pattern = document.getElementById('pattern');
+    	var ua = document.getElementById('ua');
+    	var yes = document.getElementById('yes');
+    	var no = document.getElementById('no');
+    	var check = document.getElementById('check');
+
+    	var hideClassPattern = / ?hide ?/;
+
+    	var hide = function(element){
+    		if(hideClassPattern.test(element.className) === false){
+    			element.className = element.className + ' hide';
+    		}
+    	};
+
+    	var show = function(element){
+    		if(hideClassPattern.test(element.className) === true){
+    			element.className = element.className.replace(hideClassPattern, '');
+    		}
+    	};
+
+    	var test = function(){			
+    		var expression = new RegExp(pattern.value, 'i');
+    		if(expression.test(window.navigator.userAgent)){
+    			show(yes);
+    			hide(no);
+    		} else {
+    			show(no);
+    			hide(yes);
+    		}
+    	};
+
+    	document.addEventListener('DOMContentLoaded', function(){
+    		ua.innerText = window.navigator.userAgent;
+    		test();
+    	});
+
+    	check.addEventListener('click', function(){
+    		test();
+    	});
+
+    </script>
+</body>
+</html>

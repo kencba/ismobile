@@ -1,0 +1,28 @@
+body{
+	font-family: 'Open Sans Condensed', sans-serif;
+	background-color: whitesmoke;
+	font-size: 21px;
+}
+section{
+	padding: 20px 0;
+}
+.page-title{
+	font-family: 'Source Sans Pro', sans-serif;
+	color: indianred;
+}
+
+textarea.form-control{
+	font-family: monospace;
+	height: 100px;
+}
+
+.yes{
+	color: royalblue;
+}
+
+.no{
+	color: tomato;
+}
+.result{
+	text-align: center;
+}
