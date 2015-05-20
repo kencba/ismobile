@@ -1,0 +1,48 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>browserhistory</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <script src="http://code.jquery.com/jquery-2.0.3.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.24/angular.min.js"></script>
+    <script src="https://secure.colonialfirststate.com.au/investor/static/libs/angular-ui/ui-router.js"></script>
+
+  </head>
+  <body>
+    <div data-ng-app="awesomeApp">
+      <data-ui-view></data-ui-view>
+      <script type="text/ng-template" id="home.html">
+      <div>
+          <h3>Home</h3>
+          <a href="#/one">One</a>
+      </div>
+      </script>
+
+      <script id="one.html" type="text/ng-template">
+      <div>
+          <h3>Page One</h3>
+      </div>
+      </script>
+      <script id="two.html" type="text/ng-template">
+      <div>
+          <h3>Page Two</h3>
+          <a data-ng-click="yes()" href="">Accept</a>
+      </div>
+      </script>
+    </div>
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="main.js"></script>
+    <!-- endbuild -->
+</body>
+</html>
